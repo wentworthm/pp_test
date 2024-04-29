@@ -4,10 +4,6 @@ from typing import Union
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
 @app.get("/isFibonacci/{fib_num}")
 def read_item(fib_num: int, q: Union[str, None] = None):
     return fib_num if isFibonacci(fib_num) else "not a Fibonacci number."
